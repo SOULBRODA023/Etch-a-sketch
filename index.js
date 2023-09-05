@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let blueButton = document.querySelector(".blue");
   let randomButton = document.querySelector('.random');
   let blackButton = document.querySelector('.black');
+  let clearButton = document.querySelector('.clear');
   let greenColor = "#008000";
   let blueColor = "#0000ff";
   let blackColor = "#222";
@@ -23,7 +24,12 @@ randomButton.addEventListener("click", ()=>{
 blackButton.addEventListener("click", ()=>{
   currentColor = blackColor;
 })
-
+clearButton.addEventListener('click', () => {
+  const cells = document.querySelectorAll('.cell'); 
+  cells.forEach((oneCell) => {
+    oneCell.style.backgroundColor = "white";
+  });
+})
 
 container.addEventListener('touchstart', (e)=>{
   if(e.target.classList.contains('cell')){
